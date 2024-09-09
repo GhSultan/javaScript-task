@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js tasks</title>
+     
+</head>
+
+<body>
+
+    <p id="area-circlew22"></p>
+    <p id="result"></p>
+    <p id="output"></p>
+
+
+    <script>
+
+        // PART #1
+
+        // Q1
+        var firstName="Ghofran";
+        let lastName="Sultan";
+        const age="22"
+
+        console.log(`
+        First name : ${firstName} 
+        last name :${lastName} 
+        age: ${age}`);
+
+        // Q2.1
+        var name="ghofran";
+        name="Sedra";
+        console.log(name);
+
+        // Q2.2
+        let age2=22;
+        age2=44;
+        console.log(age2);
+
+        // Q2.3
+        // const country=jordan;
+        // country=Lebanon;
+        // console.log(country);
+
+        // Q3
+        var n="ghofran";
+        console.log(Number(n));
+
+        var num2=Number("2002");
+        console.log(num2);
+
+        var num3=Boolean(2002);
+        console.log(num3);
+
+        var num4=Number(true);
+        console.log(num4);
+
+        var text1=String(2002);
+        console.log(text1);
+
+        // part#2
+        // Q1
+        var nu1=Number(prompt("Enter number one"));
+        var nu2=Number(prompt("Enter number two"));
+        var operation=String(prompt("Enter operation"));
+        var result2;
+        switch (operation) {
+            case "+":
+                result2 = nu1 + nu2; 
+            
+                break;
+            case "-":
+                result2 = nu1 - nu2;
+                break;
+            case "*":
+                result2 = nu1 * nu2;
+                break;
+            case "/":
+                if (nu2 !== 0) {
+                    result2 = nu1 / nu2;
+                } else {
+                    document.write("Error: Division by zero is not allowed.");
+                }
+                break;
+            default:
+                document.write("");
+        }
+
+        document.getElementById("output").innerHTML=result2;
+
+        // Q2
+        var mark=60;
+        var grade;
+
+        if (mark < 50) {
+            grade = "FAIL";
+        } else if (mark >= 50 && mark <= 59) {
+            grade = "D";
+        } else if (mark >= 60 && mark <= 69) {
+            grade = "C";
+        } else if (mark >= 70 && mark <= 79) {
+            grade = "B";
+        } else if (mark >= 80 && mark <= 89) {
+            grade = "A";
+        } else if (mark >= 90 && mark <= 100) {
+            grade = "A+";
+        } else {
+            grade = " OPPPPPPPS"; 
+        }
+
+        document.write(
+            `Mark: ${mark} 
+            Grade: ${grade}`);
+
+            // Q3 Area of a Circle:
+            var r = 2;
+            const byeSymbol = 3.14;
+            var a = (r * r) * byeSymbol;
+            document.getElementById("area-circlew22").innerHTML = a;
+
+
+            // Q4
+
+             let x= prompt("Enter number one"  );
+             let y= prompt("Enter number two" );
+             let z;
+
+             if(x >y){
+                z=y;
+                alert("Hello World");
+                console.log("Hello World");
+                document.getElementById("result").innerHTML = "Hello World";
+             }else{
+                
+                alert("Goodbye");
+                console.log("Goodbye");
+                document.getElementById("result").innerHTML = "Goodbye";
+             }
+
+            
+        </script>
+    
+</body>
+</html>
