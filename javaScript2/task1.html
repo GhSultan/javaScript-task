@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <p id="input"></p>
+    <script>
+       
+     
+        // Q1
+        // function tellFortune(numberChildren, partnersName, location, job) {
+        //     return `You will be a ${job} in ${location}, and married to ${partnersName} with ${numberChildren} kids.`;
+        // }
+
+        // var numChildren = prompt("Enter number of children");
+        // var parName = prompt("Enter partner's name");
+        // var loca = prompt("Enter your location");
+        // var jobTitle = prompt("Enter your job title");
+
+        // let Message = tellFortune(numChildren, parName, loca, jobTitle);
+
+        // alert(Message);
+
+
+        // Q2
+        // function calculateDogAge(dogYears){
+        //     return `Your doggie is ${dogYears*7} years old in dog years!`;
+        
+
+        // }
+
+        // var input= prompt("Enter the value  ");
+        // var Message=calculateDogAge(input);
+        // alert(Message) ;
+
+
+
+        // Q3
+
+            // function calculateSupply(age, amountPer) {
+            //     var maxAge = 100; 
+            //     var yearsRemaining = maxAge - age; 
+            //     var totalAmount = yearsRemaining * amountPer * 365;
+
+                
+            //     return `You will need ${totalAmount} cups of tea to last you until the ripe old age of 100.`;
+            // }
+
+            
+            // var input1 = parseInt(prompt("Enter your current age"));
+            // var input2 = parseFloat(prompt("Enter the amount consumed per day")); 
+
+            
+            // var message = calculateSupply(input1, input2);
+            // alert(message);
+
+    // Q4
+    //  function calledGreet(name){
+    //     return `Hello ${name}`;
+        
+    //  }     
+
+    //  var yourName=prompt("Enter your name ");
+    //  var message=calledGreet(yourName);
+    //  alert(message);
+
+
+//    Q5
+
+// The function is trying to multiply 2 * x, 
+// but the variable x is not defined within the function or passed as an argument.
+
+    // function double(cat) {
+    // return 2 * x;
+
+    // }
+
+    // You cannot pass a value like 7 directly in the function declaration; function parameters should be variable names, 
+    // not values.
+    
+    // function double(7) {
+    // return 2 * 7;
+    // }
+
+    // You cannot use a string ('7') as a function parameter.
+    // You are multiplying 2 * 'x', but 'x' is a string, not a variable.
+       
+    // function double('7') {
+    // return 2 * 'x';
+    // }
+
+        
+
+// Q6 fix these functions:
+
+// function double(x){
+//     return 2 * x; 
+// }
+
+// function double2 (x){
+//     return 2 * x;
+
+// }
+
+
+// function double3(x){
+//   return 2 * x;
+// }
+
+
+// Q7
+
+// function cube(cubeNamber){
+// return cubeNamber *cubeNamber *cubeNamber ;
+// }
+
+// console.log(cube(3));
+
+// Q8
+    // function multiply(num1, num2){
+    //     return num1 * num2;
+    // }
+     
+    // console.log(multiply(3 , 4));
+
+
+    // Q9
+    // function canIGetADrivingLicense(age){
+    //     var constNumber=20 - age;
+
+    //     if(age >= 20){
+    //         return  "yes you can otherwise return";
+    //     }else{
+    //         return `please come back after ${constNumber} years to get one`;
+    //     }
+    // }
+
+    // var yourAge=prompt("Enter your age");
+    // var message= canIGetADrivingLicense(yourAge);
+    // document.getElementById("input").innerHTML= message;
+
+    // Q10
+    // function sameLength(str1, str2){
+    //     var input1 = str1.length;
+    //         console.log(str1.length);
+    //     var input2 = str2.length;
+    //         console.log(str2.length);
+    //         if(input1==input2){
+    //             return true;
+    //         }else{
+    //             return false;
+    //         }
+            
+    // }
+
+    // var message=sameLength("tree","cat");
+    // document.getElementById("input").innerHTML=message;
+
+
+    // Q11
+        // function largerNubmer(num1, num2){
+        //     if( num1 >num2){
+        //         return `the first larger numbers is ${num1}`;
+
+        //     }else{
+        //         return `the first larger numbers is ${num2}`;
+        //     }
+
+        // }
+
+        // var message =largerNubmer(3,8);
+        // document.getElementById("input").innerHTML=message;
+
+    // Q12
+    // function smallerNubmer(num1, num2, num3){
+    //     var smallerNum;
+    //     if(num1 <num2 && num1<num3){
+    //         smallerNum=num1;
+    //     }else if(num2 <num1 && num2<num3 ){
+    //         smallerNum=num2;
+
+    //     }else{
+    //         smallerNum=num3;
+    //     }
+        
+    //     return smallerNum;
+    
+    // }
+
+    // document.getElementById("input").innerHTML=smallerNubmer(6, 4, 2);
+
+
+    // Q13
+//     function shorterString(str1, str2, str3, str4, str5) {
+
+//     var input1 = str1.length;
+//     var input2 = str2.length;
+//     var input3 = str3.length;
+//     var input4 = str4.length;
+//     var input5 = str5.length;
+
+//     if (
+//         input1 < input2 &&
+//         input1 < input3 &&
+//         input1 < input4 &&
+//         input1 < input5
+//     ) {
+//         return str1; 
+//     } else if (
+//         input2 < input1 &&
+//         input2 < input3 &&
+//         input2 < input4 &&
+//         input2 < input5
+//     ) {
+//         return str2; 
+//     } else if (
+//         input3 < input1 &&
+//         input3 < input2 &&
+//         input3 < input4 &&
+//         input3 < input5
+//     ) {
+//         return str3; 
+//     } else if (
+//         input4 < input1 &&
+//         input4 < input2 &&
+//         input4 < input3 &&
+//         input4 < input5
+//     ) {
+//         return str4; 
+//     } else {
+//         return str5; 
+//     }
+// }
+
+// console.log(shorterString("tree", "car", "apple", "cup", "dog"));
+
+    // Q14
+//     function longerString(str1, str2, str3, str4) {
+//     let longest = str1;
+
+//     if (str2.length > longest.length) {
+//         longest = str2;
+//     }
+//     if (str3.length > longest.length) {
+//         longest = str3;
+//     }
+//     if (str4.length > longest.length) {
+//         longest = str4;
+//     }
+
+//     return longest;
+// }
+
+// console.log(longerString("air","school","car","github"));
+
+    // Q15
+
+    // function  isEven(number){
+    //     if(number %2 ==0){
+    //         return "The number is even"
+
+    //     }else{
+    //         return "The number is not even "
+    //     }
+
+    // }
+    // console.log(isEven(4));
+    // console.log(isEven(7));
+
+    // Q16
+    // function  isOdd(number){
+    //     if(number %2 !==0){
+    //         return "True";
+
+    //     }else{
+    //         return "false";
+    //     }
+
+    // }
+    // console.log(isOdd(4));
+    // console.log(isOdd(7));
+
+    // Q17
+    // function positive(number) {
+    //     if (number < 0) {
+    //         return -number; 
+    //     } else {
+    //         return number; 
+    //     }
+    // }
+
+    // console.log(positive(4));  
+    // console.log(positive(-5)); 
+
+    // Q18
+
+    // function fullName(firstName, lastName) {
+    //     return firstName + " " + lastName;
+    // }
+
+    // console.log(fullName("Adam", "McCallen")); 
+    // console.log(fullName("Alex", "Mercer"));   
+
+    // Q19
+
+    // function average(num1, num2, num3, num4, num5) {
+    // const sum = num1 + num2 + num3 + num4 + num5;
+    // const avg = sum / 5;
+    
+    // return avg;
+    // }
+
+    // console.log(average(1, 2, 3, 4, 5)); 
+    // console.log(average(5, 7, 9, 3, 5)); 
+
+    // Q20
+
+    //     function randomNumber(number) {
+    //         return Math.random(number);
+    // }
+
+    // console.log(randomNumber(1));
+
+    // Q21
+
+    // Q22
+//     function scoreInUniversity(score) {
+//         if (score >= 95 && score <= 100) {
+//             return "A";
+//         } else if (score >= 85 && score < 95) {
+//             return "B";
+//         } else if (score >= 70 && score < 85) {
+//             return "C";
+//         } else if (score >= 50 && score < 70) {
+//             return "D";
+//         } else if (score >= 0 && score < 50) {
+//             return "F";
+//         } else {
+//             return "Invalid score"; 
+//         }
+// }
+
+//     console.log(scoreInUniversity(96)); 
+//     console.log(scoreInUniversity(3)); 
+//     console.log(scoreInUniversity(71)); 
+
+
+// Q23
+// function createCounter(){
+//     counter =0;
+//     return function increaseNumber(){
+//         counter++;
+//         return counter;
+//     };
+
+// }
+
+
+// const counter = createCounter();
+
+// console.log(counter()); 
+// console.log(counter()); 
+// console.log(counter());
+
+// Q24
+    // function createCounter() {
+    // let count = 0; 
+
+    // function counter() {
+    //     count++;
+    //     return count;
+    // }
+
+    // function resetCounter() {
+    //     const lastCount = count; 
+    //     count = 0; 
+    //     return `${lastCount} and the counter reset now`;
+    // }
+
+    // return { counter, resetCounter };
+    // }
+
+    // const { counter, resetCounter } = createCounter();
+
+    // console.log(counter()); 
+    // console.log(counter()); 
+    // console.log(counter()); 
+    // console.log(resetCounter()); 
+    // console.log(counter()); 
+    // console.log(counter()); 
+    // console.log(resetCounter()); 
+    // console.log(counter()); 
+
+
+    </script>
+
+
+    
+</body>
+</html>
