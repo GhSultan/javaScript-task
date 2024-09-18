@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .Hover {
+        width: 30%;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        background-color: rgb(145, 136, 136); 
+        border: 1px solid black;
+    }
+
+    .flag-container {
+            margin-top: 20px;
+        }
+
+        img {
+            width: 150px;
+            height: auto;
+            border: 2px solid #000;
+        }
+
+    
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .valid {
+            color: green;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .content {
+            display: none; 
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        .contentHide {
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        }
+
+        #contentBox {
+        margin-top: 10px;
+        }
+
+
+        #editableText {
+            width: 100%;
+            height: 150px;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .color-box {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(207, 227, 135);
+            border: 2px solid #000;
+            animation: changeColor 5s infinite; 
+        }
+
+        @keyframes changeColor {
+            0% {
+                background-color: rgb(38, 0, 255);
+            }
+            25% {
+                background-color: yellow;
+            }
+            50% {
+                background-color: green;
+            }
+            75% {
+                background-color: rgb(76, 185, 141);
+            }
+            100% {
+                background-color: red;
+            }
+        }
+    </style>
+</style>
+
+<body>
+
+        <!-- 1 -->
+        <h4>⦁When hovering with the mouse, the background should turn yellow, and the text should become bold. </h4>
+        <p class="Hover" 
+    
+        onmouseover="this.style.backgroundColor='yellow'; this.style.fontWeight='bold';" 
+        onmouseout="this.style.backgroundColor='lightgray'; this.style.fontWeight='normal';">
+        Hello World!
+        </p>
+
+        <hr><br>
+
+
+        <!-- 2 -->
+        <h4>⦁In this dropdown menu, you should add a set of country names. When a specific country is selected, its corresponding flag should be displayed. </h4>
+        <label for="countries">Choose a country:</label>
+        <select id="countries" onchange="displayFlag()">
+            <option value="">Select a country</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+            <option value="france">France</option>
+        </select>
+
+        <div class="flag-container">
+            <img id="flag" src="" alt="Country Flag" style="display: none;">
+        </div>
+        <hr><br>
+
+    
+        <!-- 3 -->
+        <h4>⦁You should allow the user to enter a password. When it is too short, it should indicate that it is too short in red, as shown. When the password does not match the confirmation, it should indicate that they do not match.</h4>
+        <form id="passwordForm">
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+                <div id="passwordError" class="error"></div>
+            </div>
+    
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword">
+                <div id="confirmPasswordError" class="error"></div>
+            </div>
+    
+            <button type="submit">Submit</button>
+        </form>
+
+        <hr><br>
+
+
+        <!-- 4 -->
+        <h4>The user should be able to show and hide the content as needed.</h4>
+        <div class="contentHide">
+            <h2>What is Lorem Ipsum?</h2>
+            <button id="toggleButton">Show</button>
+            <div id="contentBox" style="display: none;">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+                <button id="hideButton">Hide</button>
+            </div>
+        </div>
+        <hr><br>
+
+        
+        <!-- 5 -->
+
+        <h4>When typing any text inside the box, you should be able to edit it, such as changing the font type, making it bold, adding an underline, and adjusting the font size</h4>
+        <h2>Text Editor</h2>
+        <button onclick="makeBold()">Bold</button>
+        <button onclick="makeUnderline()">Underline</button>
+        <button onclick="changeFontSize()">Change Font Size</button>
+        <button onclick="changeFontFamily()">Change Font</button>
+        <br><br>
+
+        <textarea id="editableText" placeholder="Type your text here..."></textarea>
+        
+        <hr><br>
+
+        <!-- 6 -->
+         <h4>The box's color should change using animation based on the desired time, so that the color fluctuates according to a specified time</h4>
+        <h2>Color Animation Box</h2>
+        <div class="color-box"></div>
+        
+    
+
+    <script>
+        function displayFlag() {
+            const flagImage = document.getElementById('flag');
+            const country = document.getElementById('countries').value;
+
+            switch (country) {
+                case 'usa':
+                    flagImage.src = 'img/USA-Flag-Download-PNG-Image.png';
+                    break;
+                case 'uk':
+                    flagImage.src = 'img/Flag_of_the_United_Kingdom.svg.webp';
+                    break;
+                case 'france':
+                    flagImage.src = 'img/download.jpeg'; 
+                    break;
+                default:
+                    flagImage.src = ''; 
+            }
+
+            if (country) {
+                flagImage.style.display = 'block';
+            } else {
+                flagImage.style.display = 'none';
+            }
+        }
+
+
+
+        document.getElementById('passwordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            const passwordError = document.getElementById('passwordError');
+            const confirmPasswordError = document.getElementById('confirmPasswordError');
+            
+            passwordError.textContent = '';
+            confirmPasswordError.textContent = '';
+            
+            if (password.length < 8) {
+                passwordError.textContent = 'Password is too short. Must be at least 8 characters.';
+            } else {
+                passwordError.textContent = 'Password is valid.';
+                passwordError.classList.add('valid');
+            }
+            
+            if (password !== confirmPassword) {
+                confirmPasswordError.textContent = 'Passwords do not match.';
+            } else {
+                confirmPasswordError.textContent = 'Passwords match.';
+                confirmPasswordError.classList.add('valid');
+            }
+        });
+
+
+        document.getElementById('toggleButton').addEventListener('click', function() {
+        var contentBox = document.getElementById('contentBox');
+        if (contentBox.style.display === 'none') {
+            contentBox.style.display = 'block';
+            this.textContent = 'Hide';
+        } else {
+            contentBox.style.display = 'none';
+            this.textContent = 'Show';
+         }
+        });
+
+        document.getElementById('hideButton').addEventListener('click', function() {
+        document.getElementById('contentBox').style.display = 'none';
+        document.getElementById('toggleButton').textContent = 'Show';
+        });
+
+
+
+
+        
+
+        function makeBold() {
+            let textArea = document.getElementById('editableText');
+            if (textArea.style.fontWeight === 'bold') {
+                textArea.style.fontWeight = 'normal';
+            } else {
+                textArea.style.fontWeight = 'bold';
+            }
+        }
+
+        function makeUnderline() {
+            let textArea = document.getElementById('editableText');
+            if (textArea.style.textDecoration === 'underline') {
+                textArea.style.textDecoration = 'none';
+            } else {
+                textArea.style.textDecoration = 'underline';
+            }
+        }
+
+        function changeFontSize() {
+            let textArea = document.getElementById('editableText');
+            let newSize = prompt("Enter font size in pixels (e.g., 18):", "16");
+            if (newSize) {
+                textArea.style.fontSize = newSize + 'px';
+            }
+        }
+
+        function changeFontFamily() {
+            let textArea = document.getElementById('editableText');
+            let fontFamily = prompt("Enter font family (e.g., Arial, Verdana):", "Arial");
+            if (fontFamily) {
+                textArea.style.fontFamily = fontFamily;
+            }
+        }
+    </script>
+
+
+</body>
+</html>
