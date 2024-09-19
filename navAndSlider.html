@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar and Slider </title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body{
+
+            font-family: Georgia, 'Times New Roman', Times, serif; 
+        }
+
+        header{
+            width: 100%;
+            position: fixed;
+            background: rgb(248, 248, 248);
+            border: 1px solid rgb(234, 149, 200);
+            z-index: 5;
+            padding: 15px 0;
+            top: 0;
+            text-align: center;
+
+
+         }
+        
+        nav{
+            display: flex;
+            justify-content: center;
+
+        }
+
+        nav ul {
+           
+            display: flex;
+            list-style-type: none;
+
+        }
+
+        nav ul li{
+            position: relative;
+
+        }
+
+        nav ul li a{
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 2px;
+        
+        }
+        nav ul li a:hover {
+            background-color: rgb(244, 173, 208);
+        }
+
+        
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            left: 0;
+            width:100%;
+            top: 100%;
+            background: white;
+            padding: 10px 0;
+            border-radius: 8px;
+            
+        }
+
+        nav ul li:hover ul {
+            display: block;
+
+        }
+
+        nav ul li ul li {
+            display: flex;
+            gap: 20px;
+
+            
+        }
+
+        nav ul li ul li a {
+            font-size: 10px;
+            color: rgb(15, 15, 15);
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(244, 173, 208);
+
+        }
+
+        section h4 {
+            text-align: center;
+            color: white;
+        }
+
+        #home {
+            height: 100vh;
+            
+        }
+
+        #contant {
+            height: 100vh;
+        }
+
+        #about {
+            height: 100vh;
+        }
+        .slider {
+            width: 100%;
+            max-width: 400px; 
+            height: 300px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden; 
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%; 
+        }
+
+        .slide-container {
+            min-width: 100%; 
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide-container img {
+            width: 70%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#contant">Contant</a></li>
+                <li><a href="#about ">About</a></li>
+                <li>
+                    <a href="#dropdownMenu">Menu</a>
+                    <ul>
+                        <li><a href="#about">Option1</a></li>
+                        <li><a href="#home">Option2 </a></li>
+                    </ul>
+                </li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section id="home">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide-container">
+                        <img src="img/t016558c77ef83068b7.png" alt="Slide 1">
+                    </div>
+                    <div class="slide-container">
+                        <img src="img/angora-white-cat-blue-yellow-eyes-sitting-window-sill-looking-curious-angora-white-cat-blue-yellow-eyes-103956027.webp" alt="Slide 2">
+                    </div>
+                    <div class="slide-container">
+                        <img src="img/R.jpeg" alt="Slide 3">
+                    </div>
+                    <div class="slide-container">
+                        <img src="img/0eed0379c776febb685300b3d7a90624.jpg" alt="Slide 4">
+                    </div>
+                </div>
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+
+        </section>
+    
+        <section id="contant">
+            <h4>This is section two in this page</h4>
+    
+        </section>
+    
+        <section id="about">
+            <h4>This is section three in this page</h4>
+        </section>
+        
+    </main>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const slideContainers = document.querySelectorAll('.slide-container');
+        let currentIndex = 0;
+
+        const showSlide = (index) => {
+            const slideWidth = slideContainers[0].offsetWidth;
+            slides.style.transform = `translateX(-${index * slideWidth}px)`;
+        };
+
+        const nextSlide = () => {
+            currentIndex = (currentIndex + 1) % slideContainers.length;
+            showSlide(currentIndex);
+        };
+
+        const prevSlide = () => {
+            currentIndex = (currentIndex - 1 + slideContainers.length) % slideContainers.length;
+            showSlide(currentIndex);
+        };
+
+        document.querySelector('.next').addEventListener('click', nextSlide);
+        document.querySelector('.prev').addEventListener('click', prevSlide);
+
+        setInterval(nextSlide, 3000);
+
+    </script>
+</body>
+</html>
